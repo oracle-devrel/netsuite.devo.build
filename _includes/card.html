@@ -1,0 +1,35 @@
+{% assign pg = include.source %}
+{% assign parent = pg.parent | join: '' %}
+{% assign series = include.series %}
+<div class="{{ include.class }} {{ pg.tags | tag_classes }} {{ series.series }} color-{{ series.color | default: 'green' }}" data-category="{{ pg.categories | join: ' ' }}" data-tags="{{ pg.tags | join: ' ' }}">
+  <header>
+
+    <h4><a class="" href="{{ site.baseurl }}{{ pg.url }}">{{ pg.title }} {% if include.collection == null and pg.series != null %}
+      <span class="">Series</span>
+    {% endif %}</a></h4>
+    <div class="date">
+      {% if pg.date %}
+      <span class="published"><time datetime="{{ pg.date | iso }}">{{ pg.date | format_date: "ordinal" }}</time></span>
+      {% endif %}
+      {% if pg.modified %}
+      <span class="updated">Updated: <time datetime="{{ pg.modified | iso }}">{{ pg.modified | format_date: "ordinal" }}</time></span>
+      {% elsif pg.updated %}
+      <span class="updated">Updated: <time datetime="{{ pg.updated | iso }}">{{ pg.updated | format_date: "ordinal" }}</time></span>
+      {% endif %}
+    </div>
+  </header>
+
+    <div class="desc">
+      {{ pg.description | markdownify }}
+
+      <footer class="meta">
+          <span class="tags">
+          {% for tag in pg.tags %}
+          <a class="animated-link tag" href="{{ site.baseurl }}/{{ site.tag_page_dir }}/{{ tag | slugify }}">{{ tag }}</a>{% endfor %}
+          {% if pg.parent contains 'frameworks' %}
+            <a class="animated-link tag tag--frameworks" href="{{ site.baseurl }}/frameworks">Frameworks</a>
+          {% endif %}
+          </span>
+      </footer>
+    </div>
+</div>

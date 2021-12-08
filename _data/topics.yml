@@ -1,0 +1,55 @@
+topics:
+  - always-free
+  - apache
+  - apex
+  - get-started
+  - hardware
+  - iac
+  - iot
+  - jupyter
+  - machine-learning
+  - oci
+  - oke
+  - open-source
+  - orm
+  - pytorch
+  - rpi
+  - serverless
+  - streaming
+  - ubuntu
+  - data-visualization
+  - analytics
+personas:
+  - architect
+  - arvr
+  - back-end
+  - community
+  - data-management
+  - data-science
+  - dbre
+  - devops
+  - front-end
+  - full-stack
+  - game-dev
+  - robotics
+languages:
+  - go
+  - java
+  - javascript
+  - mysql
+  - php
+  - python
+  - ruby
+  - terraform
+  - typescript
+frameworks:
+  - express
+  - flask
+  - kubernetes
+  - micronaut
+  - nodejs
+  - spark
+  - spring
+  - tensorflow
+  - ansible
+

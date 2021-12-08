@@ -1,0 +1,58 @@
+brett-terpstra:
+  name: Brett Terpstra
+  bio: Oracle DevRel Writer, developer, blogger, podcaster
+  home: https://brettterpstra.com
+  twitter: ttscoff
+  github: ttscoff
+adrian-png:
+  name: Adrian Png
+  bio: A seasoned solutions architect with over 20 years of experience working with clients to design and implement state-of-the-art infrastructure and applications. He earned a Master of Technology (Knowledge Engineering) degree from the National University of Singapore and is always eager to apply his knowledge and skills in Machine Learning. Adrian is also trained and certified in several Oracle technologies including Oracle Cloud Infrastructure, Oracle Autonomous Database, Oracle cloud native services, Oracle Database, and Oracle Application Express. He is an Oracle ACE and a recognized contributor in the Oracle community. Most recently, he co-authored the book Getting Started with the Oracle Cloud Free Tier. In his spare time, Adrian enjoys tinkering with electronics projects and 3D printing.
+  twitter: fuzziebrain
+  github: fuzziebrain
+olivier:
+  name: Olivier Francois Xavier Perard
+  github: operard
+  linkedin: olivier-perard
+  twitter: olivier_perard
+  bio: Work to teach how to mix AI technologies with micro-services and parallelizable architectures
+tim-clegg:
+  name: Tim Clegg
+  bio: Code. Share. Secure. Innovate. Automate. Educate.
+  github: timclegg
+  linkedin: https://www.linkedin.com/in/timothy-clegg/
+jon-decamp:
+  name: Jon DeCamp
+  bio: Jon has a passion for infrastructure automation and improving the lives of his customers.
+  github: jondecamp
+  twitter: jondecamp
+bogdan-farca:
+  name: Bogdan Farca
+  email: bogdan.farca@oracle.com
+kubemen:
+  name: Malte Menkhoff
+  bio: Malte is a passioned solution architect and is supporting customers in the DACH region in migrating to OCI.
+  github: kubemen
+  email: malte.menkhoff@oracle.com
+community:
+  name: Oracle Developer Community
+lucas-jellema:
+  name: Lucas Jellema
+  bio: Lucas Jellema, active in IT (and with Oracle) since 1994. Oracle ACE Director and Oracle Developer Champion.
+frederic-descamps:
+  name: Frédéric Descamps
+  bio: "@lefred has been consulting OpenSource and MySQL for 20+ years. After graduating in Management Information Technology, Frédéric started his career as a developer for an ERP under HPUX."
+  home: https://lefred.be/
+  linkedin: freddescamps
+  twitter: lefred
+  github: lefred
+ignacio-martinez:
+  name: Ignacio Martínez
+  linkedin: ignacio-g-martinez
+ali-mukadam:
+  name: Ali Mukadam
+  home: https://lmukadam.medium.com
+  bio: |-
+    Technical Director, Asia Pacific Center of Excellence.
+
+    For the past 16 years, Ali has held technical presales, architect and industry consulting roles in BEA Systems and Oracle across Asia Pacific, focusing on middleware and application development. Although he pretends to be Thor, his real areas of expertise are Application Development, Integration, SOA (Service Oriented Architecture) and BPM (Business Process Management). An early and worthy Docker and Kubernetes adopter, Ali also leads a few open source projects (namely [terraform-oci-oke](https://github.com/oracle-terraform-modules/terraform-oci-oke)) aimed at facilitating the adoption of Kubernetes and other cloud native technologies on Oracle Cloud Infrastructure.
+  linkedin: alimukadam

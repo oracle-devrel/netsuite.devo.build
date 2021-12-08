@@ -1,0 +1,18 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign site_pages = site.pages | where_exp:"item", "item.categories contains page.children" | sort: "modified" | reverse %}
+
+<section class="category">
+  <div class="category__cards cards">
+      {% for pg in site_pages %}
+          {% assign series = site.pages | where: "series", pg.parent | first %}
+
+          {% include card.html source=pg class="card category__card" %}
+      {% endfor %}
+  </div>
+
+</section>

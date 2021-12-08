@@ -1,0 +1,43 @@
+  <div class="sidebar sticky">
+    <p><strong>Tags:</strong> <span class="tags">
+
+            {% for tag in page.tags %}
+            <a class="animated-link tag" href="{{ site.baseurl }}/{{ site.tag_page_dir }}/{{ tag | slugify }}">{{ tag }}</a>{% endfor %}
+            </span>
+    </p>
+  {% if page.author or layout.author_profile %}{% include author-profile.html %}{% endif %}
+  {% if page.sidebar == 'series' %}
+    {% include series-nav.html series=page.parent.last %}
+  {% elsif page.sidebar %}
+    {% for s in page.sidebar %}
+      {% if s.title %}<h6>{{ s.title }}</h6>{% endif %}
+      {% if s.links %}
+      <ul>
+        {% for link in s.links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if s.image %}
+        <img src="{{ s.image | relative_url | replace: '//', '/' }}"
+             alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+      {% endif %}
+      {% if s.text %}{{ s.text | markdownify }}{% endif %}
+      {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
+    {% endfor %}
+    {% if page.sidebar.nav %}
+      {% include nav_list nav=page.sidebar.nav %}
+    {% endif %}
+  {% else %}
+  {% assign site_pages = site.pages | where_exp: "item", "item.author" != '' | where_exp:"item", "item.author == page.author" | where_exp:"item", "item.url != page.url" %}
+  {% if site_pages.size > 0 %}
+  <p><strong>From this author:</strong>
+    <ul>
+      {% for pg in site_pages %}
+        <li><a href="{{ site.baseurl }}{{ pg.url }}">{{ pg.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% endif %}
+
+  </div>

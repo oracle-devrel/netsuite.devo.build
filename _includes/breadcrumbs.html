@@ -1,0 +1,50 @@
+{% case site.category_archive.type %}
+  {% when "liquid" %}
+    {% assign path_type = "#" %}
+  {% when "jekyll-archives" %}
+    {% assign path_type = nil %}
+{% endcase %}
+
+{% if page.collection != 'posts' %}
+  {% assign path_type = nil %}
+  {% assign crumb_path = '/' %}
+{% else %}
+  {% if page.parent != '' %}
+    {% assign crumb_path = 'projects' %}
+  {% else %}
+    {% assign crumb_path = site.category_archive.path %}
+  {% endif %}
+{% endif %}
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="https://developer.oracle.com/" itemprop="item"><span itemprop="name">Developer Resource Center</span></a>
+      <meta itemprop="position" content="{{ i }}" />
+    </li>
+    <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+    {% assign crumbs = page.url | split: '/' %}
+    {% assign i = 1 %}
+    {% assign cumulus = site.baseurl %}
+    {% for crumb in crumbs offset: 1 %}
+      {% if forloop.first %}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ cumulus }}/" itemprop="item"><span itemprop="name">{{ site.data.ui-text[site.locale].breadcrumb_home_label | default: "Dev.O Tutorials" }}</span></a>
+          <meta itemprop="position" content="{{ i }}" />
+        </li>
+        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+      {% endif %}
+      {% if forloop.last %}
+        <li class="current">{{ page.title }}</li>
+      {% else %}
+        {% assign i = i | plus: 1 %}
+        {% assign cumulus = cumulus | append: "/" | append: crumb %}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ cumulus }}" itemprop="item"><span itemprop="name">{{ crumb | replace: '-', ' ' | replace: '%20', ' ' | capitalize }}</span></a>
+          <meta itemprop="position" content="{{ i }}" />
+        </li>
+        <span class="sep">{{ site.data.ui-text[site.locale].breadcrumb_separator | default: "/" }}</span>
+      {% endif %}
+    {% endfor %}
+  </ol>
+</nav>

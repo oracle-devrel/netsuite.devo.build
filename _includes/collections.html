@@ -1,0 +1,31 @@
+<section class="collections">
+  <div class="collections__cards cards">
+    {% assign site_pages = site.pages | where_exp: "item", "item.series != null" | sort:"title" %}
+    {% for pg in site_pages %}
+
+    <a href="{{ site.baseurl }}{{ pg.url }}" class="collections__card card">
+
+
+        <h4>{{ pg.title }}</h4>
+        {% assign thumb = '' %}
+        {% if pg.thumbnail %}
+          {% assign thumb = pg.thumbnail %}
+        {% elsif pg.image %}
+          {% assign thumb = pg.image %}
+        {% else %}
+          {% assign first_child = site.pages | where_exp:"item", "item.parent contains pg.series" | sort: "date" | reverse | first %}
+          {% if first_child.thumbnail %}
+            {% assign thumb = first_child.thumbnail %}
+          {% elsif first_child.image %}
+            {% assign thumb = first_child.image %}
+          {% endif %}
+        {% endif %}
+
+
+        {{ pg.description | markdownify }}
+
+    </a>
+    {% endfor %}
+  </div>
+
+</section>

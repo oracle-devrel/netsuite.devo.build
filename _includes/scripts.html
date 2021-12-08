@@ -1,0 +1,39 @@
+{% if site.footer_scripts %}
+  {% for script in site.footer_scripts %}
+    <script src="{{ script | relative_url | replace: '//', '/' }}"></script>
+  {% endfor %}
+{% else %}
+  <script src="{{ '/assets/js/main.min.js' | relative_url | replace: '//', '/' }}"></script>
+  <script src="{{ '/assets/js/custom.js' | relative_url | replace: '//', '/' }}"></script>
+{% endif %}
+
+{% if site.search == true or page.layout == "search" %}
+  {%- assign search_provider = site.search_provider | default: "lunr" -%}
+  {%- case search_provider -%}
+    {%- when "lunr" -%}
+      {% include_cached search/lunr-search-scripts.html %}
+    {%- when "google" -%}
+      {% include_cached search/google-search-scripts.html %}
+    {%- when "algolia" -%}
+      {% include_cached search/algolia-search-scripts.html %}
+  {%- endcase -%}
+{% endif %}
+
+{% include analytics.html %}
+{% include /comments-providers/scripts.html %}
+
+{% if site.after_footer_scripts %}
+  {% for script in site.after_footer_scripts %}
+    <script src="{{ script | relative_url | replace: '//', '/' }}"></script>
+  {% endfor %}
+{% endif %}
+
+<!-- Start SiteCatalyst code -->
+<script>
+  var s_pageName = "devrel:en-us:";
+  if (typeof(document.title) != "undefined") {
+    var s_pageName = s_pageName + document.title.trim()
+  };
+</script>
+<script src="https://www.oracleimg.com/us/assets/metrics/ora_otn.js"></script>
+<!-- End SiteCatalyst code -->
