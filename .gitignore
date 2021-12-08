@@ -31,3 +31,13 @@ Temporary Items
 .crt
 .csr
 .pem
+
+#jekyll
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+*.taskpaper
+*.buildnotes
+.doingrc
