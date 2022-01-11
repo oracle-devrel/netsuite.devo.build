@@ -8,7 +8,7 @@ pagination:
 header:
     overlay_color: "#035368"
     search: true
-excerpt: Developer tutorials from your friends at Oracle and the developer community.
+excerpt: Developer tutorials from your friends at Oracle NetSuite and the developer community.
 ---
 
 

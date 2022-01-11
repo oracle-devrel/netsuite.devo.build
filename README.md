@@ -2,7 +2,7 @@
 
 ## Staging your content
 
-We don't have a good staging system right now. We'll be able to show you your work before it goes live, but if you want to see how things will render _while_ you're working on them, you have to options
+We don't have a good staging system right now. We'll be able to show you your work before it goes live, but if you want to see how things will render _while_ you're working on them, you have two options
 1. run a staging site in a docker container on your local machine, as described [here](test/README.md)
 2. download the main repo and run a local Jekyll server as described below.
 
