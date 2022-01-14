@@ -11,17 +11,17 @@ tags:
 categories:
 - sales-order
 - opensource
-thumbnail: assets/landing-zone.png
 description: This use case demonstrates how to fulfill your sales order.
-toc: true
 author: Michelle Hu
 date: 2022-01-11 11:00:00
 ---
 To start the sales order fulfillment process, create a fulfillment from your sales order. You can create a fulfillment by sending a POST request with the ID of the sales order you want to fulfill.
 
+<!-- {% raw %} -->
 ```
 POST {{REST_SERVICE}}/record/v1/salesorder/{{SALES_ORDER_ID}}/!transform/itemfulfillment
 ```
+<!-- {% endraw %} -->
 
 The following code sample contains two orderLine groupings:
 
@@ -48,10 +48,12 @@ The following code sample contains two orderLine groupings:
 }
 ```
 
-> **Note:** Like the provided code sample, your sales order may not have sequential order lines. For example, `"orderLine": 4` follows `"orderLine": 1` in the code sample.
+> 📢 **Note:** Like the provided code sample, your sales order may not have sequential order lines. For example, `"orderLine": 4` follows `"orderLine": 1` in the code sample.
 
 To check the correct `orderLine` number for an item, use a GET call to retrieve the sales order item information through REST as show here: 
 
+<!-- {% raw %} -->
 ```
 GET {{REST_SERVICES}}/record/v1/salesOrder/{{ID}}/item
 ```
+<!-- {% endraw %} -->

@@ -11,7 +11,6 @@ tags:
 categories:
 - sales-order
 - opensource
-thumbnail: assets/landing-zone.png
 description: This use case demonstrates how to approve your sales order.
 toc: true
 author: Michelle Hu
@@ -40,6 +39,7 @@ To create a preapproved sales order, set the `orderStatus` in the POST request t
 
 **Setting Sales Order Approval Status**
 
+<!-- {% raw %} -->
 ```
 POST {{REST_SERVICES}}/record/v1/salesOrder
 {
@@ -59,26 +59,31 @@ POST {{REST_SERVICES}}/record/v1/salesOrder
     }
 }
 ```
+<!-- {% endraw %} -->
 
 If you want to create a sales order that requires approval after you create it, send in a PATCH request with `orderStatus "B"` in the body. 
 
+<!-- {% raw %} -->
 ```
 PATCH {{REST_SERVICES}}/record/v1/salesOrder/{{SALES_ORDER_ID}}
 {
    "orderStatus": "B"
 }
 ```
+<!-- {% endraw %} -->
 
 ## Reset Approval Status
 
 If you already approved the sales order but need to reset the approval status, send a PATCH request with the updated `orderStatus` in the body.
 
+<!-- {% raw %} -->
 ```
 PATCH {{REST_SERVICES}}/record/v1/salesOrder/{{SALES_ORDER_ID}}
 {
    "orderStatus": "A"
 }
 ```
+<!-- {% endraw %} -->
 
 ## Close a Sales Order
 
@@ -86,6 +91,7 @@ To close the sales order, close individual line items on the sales order using t
 
 **Patch Call for Closing a Sales Order**
 
+<!-- {% raw %} -->
 ```
 PATCH {{REST_SERVICES}}/record/v1/salesOrder/{{SALES_ORDER_ID}}
 {
@@ -107,3 +113,4 @@ PATCH {{REST_SERVICES}}/record/v1/salesOrder/{{SALES_ORDER_ID}}
     }
 }
 ```
+<!-- {% endraw %} -->

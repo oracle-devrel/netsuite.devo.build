@@ -11,7 +11,6 @@ tags:
 categories:
 - sales-order
 - opensource
-thumbnail: assets/landing-zone.png
 description: This use case demonstrates how to apply a promotion to your sales order.
 toc: true
 author: Michelle Hu
@@ -23,6 +22,7 @@ You can do this when you create a new sales order or when you make an update to 
 
 **Applying a Promotion to a Sales Order**
 
+<!-- {% raw %} -->
 ```
 POST {{REST_SERVICES}}/record/v1/salesOrder
 {
@@ -42,6 +42,7 @@ POST {{REST_SERVICES}}/record/v1/salesOrder
     }
 }
 ```
+<!-- {% endraw %} -->
 
 ## Apply a Discount Item to a Sales Order
 
@@ -49,6 +50,7 @@ If you have a discount item you want to apply to a sales order, you can either a
 
 **Applying a Discount Item When Creating a New Sales Order**
 
+<!-- {% raw %} -->
 ```
 POST {{REST_SERVICES}}/record/v1/salesOrder
 {
@@ -68,12 +70,15 @@ POST {{REST_SERVICES}}/record/v1/salesOrder
     }
 }
 ```
+<!-- {% endraw %} -->
 
 **Applying a Discount Item When Updating an Existing Sales Order**
 
+<!-- {% raw %} -->
 ```
 PATCH {{REST_SERVICES}}/record/v1/salesOrder/{{SALES_ORDER_ID}}
 {
     "discountitem": { "id": 99 }
 }
 ```
+<!-- {% endraw %} -->

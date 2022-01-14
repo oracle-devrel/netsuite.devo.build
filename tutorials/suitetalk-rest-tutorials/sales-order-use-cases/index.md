@@ -4,9 +4,8 @@ title:  SuiteTalk REST Web Services Tutorials - Sales Order Use Cases
 series: sales-order-use-cases
 parent: [tutorials, suitetalk-rest-tutorials]
 description: The following collection contains end-to-end guidelines for sales order use cases.
-thumbnail: assets/landing-zone.png
 author: Michelle Hu
-tags: [beginner]
+tags: [open-source, beginner]
 sort: asc
 color: purple
 date: 2021-01-11 11:00:00
@@ -28,7 +27,7 @@ A sales order is a transaction that records a commitment to sell items or servic
 
 ## About This Tutorial
 
-The following `{{ VARIABLE }}` expressions are variables that you need to customize when reusing the code samples.
+The following <!-- {% raw %} --> `{{ VARIABLE }}` <!-- {% endraw %} --> expressions are variables that you need to customize when reusing the code samples.
 
 <table>
   <tbody>
@@ -37,11 +36,11 @@ The following `{{ VARIABLE }}` expressions are variables that you need to custom
       <td> Definition </td>
     </tr>
     <tr>
-      <td><code>{{REST_SERVICES}}</code></td>
+      <td><!-- {% raw %} --><code>{{REST_SERVICES}}</code><!-- {% endraw %} --></td>
       <td> Indicates your access to the NetSuite REST Service (for example, <code>https://testaccount.corp.netsuite.com/services/rest</code>). </td>
     </tr>
     <tr>
-      <td><code>{{*_ID}}</code></td>
+      <td><!-- {% raw %} --><code>{{*_ID}}</code><!-- {% endraw %} --></td>
       <td> These variables refer to the internal ID of the record. For example, <code>ESTIMATE_ID</code> or <code>SALES_ORDER_ID.</code> </td>
     </tr>
   </tbody>

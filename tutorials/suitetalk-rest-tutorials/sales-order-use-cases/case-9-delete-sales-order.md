@@ -11,14 +11,14 @@ tags:
 categories:
 - sales-order
 - opensource
-thumbnail: assets/landing-zone.png
 description: This use case demonstrates how to delete your sales order.
-toc: true
 author: Michelle Hu
 date: 2022-01-11 11:00:00
 ---
 To delete a sales order, send the DELETE call to delete the specific record with the specified ID.
 
+<!-- {% raw %} -->
 ```
 DELETE {{REST_SERVICES}}/record/v1/salesOrder/{{ID}}
 ```
+<!-- {% endraw %} -->

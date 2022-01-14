@@ -11,7 +11,6 @@ tags:
 categories:
 - sales-order
 - opensource
-thumbnail: assets/landing-zone.png
 description: This use case demonstrates how to create a progress sales order.
 toc: true
 author: Michelle Hu
@@ -72,6 +71,7 @@ For more information, see [Creating Progress Sales Orders](https://docs.oracle.c
 
 **Progress Sales Order**
 
+<!-- {% raw %} -->
 ```
 POST {{REST_SERVICES}}/record/v1/salesorder
 {
@@ -106,3 +106,4 @@ POST {{REST_SERVICES}}/record/v1/salesorder
     }
 }
 ```
+<!-- {% endraw %} -->
