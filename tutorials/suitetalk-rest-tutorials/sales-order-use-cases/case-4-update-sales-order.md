@@ -97,7 +97,7 @@ PATCH {{REST_SERVICES}}/record/v1/salesOrder/{{salesOrderId}}?replace=item
 ```
 <!-- {% endraw %} -->
 
-> 📢 **Note:** Currently, there is no option to individually delete a specific line through REST, so you can make the lines optional and let the sales person enforce this rule.
+> 📢  **Note:** Currently, there is no option to individually delete a specific line through REST, so you can make the lines optional and let the sales person enforce this rule.
 
 **Removing a Line Item (Future)**
 
