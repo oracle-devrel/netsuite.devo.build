@@ -48,7 +48,7 @@ The following code sample contains two orderLine groupings:
 }
 ```
 
-> 📢  **Note:** Like the provided code sample, your sales order may not have sequential order lines. For example, `"orderLine": 4` follows `"orderLine": 1` in the code sample.
+> 📢 &nbsp; **Note:** Like the provided code sample, your sales order may not have sequential order lines. For example, `"orderLine": 4` follows `"orderLine": 1` in the code sample.
 
 To check the correct `orderLine` number for an item, use a GET call to retrieve the sales order item information through REST as show here: 
 
