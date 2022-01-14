@@ -11,7 +11,6 @@ tags:
 categories:
 - suitebilling
 - opensource
-thumbnail: assets/landing-zone.png
 description: This use case demonstrates how to manage your subscription sales.
 toc: true
 author: Michelle Hu
@@ -120,7 +119,7 @@ If desired, you can change the defaults. To change the defaults, you send a PATC
 
 Clean Water Co. wants the silver support tier and has 25 users. Because they are one of your first customers, they receive a 50% discount on their setup costs.
 
-> **Note:** Leaving a field undefined leaves it unchanged. If you want to set the value of a field to an empty value, you must explicitly set the field to null in the request body.
+> 📢 **Note:** Leaving a field undefined leaves it unchanged. If you want to set the value of a field to an empty value, you must explicitly set the field to null in the request body.
 
 A successful request returns a response with HTTP status **204 No Content**. The endpoint for the modified record is returned in the response headers.
 

@@ -11,7 +11,6 @@ tags:
 categories:
 - suitebilling
 - opensource
-thumbnail: assets/landing-zone.png
 description: This use case demonstrates how to manage your subscription catalog.
 toc: true
 author: Michelle Hu
@@ -96,7 +95,7 @@ Your requirements are as follows:
 - Setup is a one-time line
 - Licensing and the number of users (seats) are recurring lines
 - Customers must choose one of the three support tiers
-> **Note:** At present time, there is no way to enforce this behavior through NetSuite, so you can make the lines optional and let the sales person enforce this rule.
+> 📢 **Note:** At present time, there is no way to enforce this behavior through NetSuite, so you can make the lines optional and let the sales person enforce this rule.
 - All recurring lines should be prorated except for seats
 - All lines are billed in advance
 
@@ -398,6 +397,7 @@ On a successful response, you have completed the process for creating a subscrip
 
 **Price Book**
 
+```
 {
     "subscriptionPlan": { "id": "1" },
     "currency": { "id": "1" },
@@ -488,6 +488,7 @@ On a successful response, you have completed the process for creating a subscrip
         ]
     }
 }
+```
 
 ## Retrieve Records
 
@@ -495,12 +496,12 @@ You can retrieve records using a GET request. You can also use a GET request for
 
 **Example:** In this example, the GET request returns the response body that follows.
 
-> **Note:** The response body is slightly different from the request body because there are other optional fields. These fields were set to their default values internally. The member sublist has its own endpoint that you can access to gather field data for each line.
+> 📢 **Note:** The response body is slightly different from the request body because there are other optional fields. These fields were set to their default values internally. The member sublist has its own endpoint that you can access to gather field data for each line.
 
 This GET request:
 
 ```
-GET http://demo123.suitetalk.api.netsuite.com/services/rest/record/v1/subscriptionplan/1
+GET http://demo123.suitetalk.api.netsuite.com/services/rest/record/v1/subscriptionplan/1          
 ```
 
 Returns this response body:

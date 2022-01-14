@@ -4,7 +4,6 @@ title:  SuiteTalk REST Web Services Tutorials - SuiteBilling Use Cases
 series: suitebilling-use-cases
 parent: [tutorials, suitetalk-rest-tutorials]
 description: The following collection contains end-to-end guidelines for SuiteBilling use cases.
-thumbnail: assets/landing-zone.png
 author: Michelle Hu
 tags: [open-source, beginner]
 sort: asc

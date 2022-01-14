@@ -11,17 +11,17 @@ tags:
 categories:
 - sales-order
 - opensource
-thumbnail: assets/landing-zone.png
 description: This use case demonstrates how to retrieve your sales order.
-toc: true
 author: Michelle Hu
 date: 2022-01-11 11:00:00
 ---
 Use a GET request with the Sales Order's ID number to retrieve the sales order data.
 
+<!-- {% raw %} -->
 ```
 GET {{REST_SERVICES}}/record/v1/salesOrder/{{ID}} 
 ```
+<!-- {% endraw %} -->
 
 In the response body, you can see all the data pertaining to the sales order. The data includes the specific field values that you set, as well as default values for the fields that you did not set.
 
