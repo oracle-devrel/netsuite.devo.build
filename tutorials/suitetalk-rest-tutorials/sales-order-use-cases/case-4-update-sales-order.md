@@ -49,7 +49,7 @@ To update a field for a specific line, specify the line number in the body of yo
 
 **Updating an Existing Item**
 
-```
+```json
 {
     "item": {
         "items": [
@@ -74,7 +74,7 @@ PATCH {{REST_SERVICES}}/record/v1/salesOrder/{{SALES_ORDER_ID}}
 
 **Creating a New Line Item**
 
-```
+```json
 {
     "item": {
         "items": [
@@ -101,7 +101,8 @@ PATCH {{REST_SERVICES}}/record/v1/salesOrder/{{salesOrderId}}?replace=item
 
 **Removing a Line Item (Future)**
 
-```
+<!-- {% raw %} -->
+```json
 {
    "item": {
       "items": [{
@@ -114,3 +115,4 @@ PATCH {{REST_SERVICES}}/record/v1/salesOrder/{{salesOrderId}}?replace=item
    }
 }
 ```
+<!-- {% endraw %} -->

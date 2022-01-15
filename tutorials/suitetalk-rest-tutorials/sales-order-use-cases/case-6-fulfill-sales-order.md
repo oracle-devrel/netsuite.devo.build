@@ -28,7 +28,7 @@ The following code sample contains two orderLine groupings:
 - In the first grouping, you partially fulfill an order by specifying a `quantity` of less than the full order **("quantity": 1).**
 - In the second grouping, you leave the order unfulfilled by setting the `itemreceive` parameter to false **("itemreceive": false).**
 
-```
+```json
 {
     "item": {
         "items": [

@@ -32,7 +32,7 @@ If you leave the request body empty, NetSuite creates an Invoice for all fulfill
 
 **Invoice From a Sales Order**
 
-```
+```json
 {
     "item": {
         "items": [
@@ -63,7 +63,7 @@ If you leave the request body empty, NetSuite creates a cash sale for all fulfil
 
 **Cash Sale From a Sales Order**
 
-```
+```json
 {
     "item": {
         "items": [

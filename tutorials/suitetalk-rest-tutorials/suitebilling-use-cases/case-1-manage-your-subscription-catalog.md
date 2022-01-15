@@ -113,7 +113,7 @@ A successful request returns a response with a HTTP status of **204 No Content**
 
 **Example Subscription Plan**
 
-```
+```json
 {
     "itemId": "DEFEND Package",
     "initialTerm": { "id": "1" },
@@ -203,7 +203,7 @@ Each price plan requires its own request.
 
 **Price Plan 1**
 
-```
+```json
 {
     "currency": { "id": "1" },
     "pricePlanType": "2",
@@ -221,7 +221,7 @@ Each price plan requires its own request.
 
 **Price Plan 2**
 
-```
+```json
 {
     "currency": { "id": "1" },
     "pricePlanType": "2",
@@ -239,7 +239,7 @@ Each price plan requires its own request.
 
 **Price Plan 3**
 
-```
+```json
 {
     "currency": { "id": "1" },
     "pricePlanType": "4",
@@ -267,7 +267,7 @@ Each price plan requires its own request.
 
 **Price Plan 4**
 
-```
+```json
 {
     "currency": { "id": "1" },
     "pricePlanType": "2",
@@ -285,7 +285,7 @@ Each price plan requires its own request.
 
 **Price Plan 5**
 
-```
+```json
 {
     "currency": { "id": "1" },
     "pricePlanType": "2",
@@ -303,7 +303,7 @@ Each price plan requires its own request.
 
 **Price Plan 6**
 
-```
+```json
 {
     "currency": { "id": 1 },
     "pricePlanType": "2",
@@ -321,7 +321,7 @@ Each price plan requires its own request.
 
 **Price Plan 7**
 
-```
+```json
 {
     "currency": { "id": "1" },
     "pricePlanType": "2",
@@ -339,7 +339,7 @@ Each price plan requires its own request.
 
 **Price Plan 8**
 
-```
+```json
 {
     "currency": { "id": "1" },
     "pricePlanType": "2",
@@ -357,7 +357,7 @@ Each price plan requires its own request.
 
 **Price Plan 9**
 
-```
+```json
 {
     "currency": { "id": "1" },
     "pricePlanType": "2",
@@ -397,7 +397,7 @@ On a successful response, you have completed the process for creating a subscrip
 
 **Price Book**
 
-```
+```json
 {
     "subscriptionPlan": { "id": "1" },
     "currency": { "id": "1" },
@@ -506,7 +506,7 @@ GET http://demo123.suitetalk.api.netsuite.com/services/rest/record/v1/subscripti
 
 Returns this response body:
 
-```
+```json
 {
     "links": [
         {
