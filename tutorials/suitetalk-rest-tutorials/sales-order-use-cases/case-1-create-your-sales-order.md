@@ -13,7 +13,7 @@ categories:
 - opensource
 description: This use case demonstrates how to create your sales order.
 toc: true
-author: Michelle Hu
+author: michelle-hu
 date: 2022-01-11 11:00:00
 ---
 There are two ways you can create a sales order:
@@ -68,7 +68,7 @@ POST {{REST_SERVICES}}/record/v1/salesOrder
 
 **Basic Sales Order**
 
-```
+```json
 {
     "entity": {
         "id": "110"
@@ -88,7 +88,7 @@ POST {{REST_SERVICES}}/record/v1/salesOrder
 
 **More Complicated Sales Order**
 
-```
+```json
 {
     "entity": {
         "id": "110"

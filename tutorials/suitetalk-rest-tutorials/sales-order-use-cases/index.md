@@ -4,7 +4,7 @@ title:  SuiteTalk REST Web Services Tutorials - Sales Order Use Cases
 series: sales-order-use-cases
 parent: [tutorials, suitetalk-rest-tutorials]
 description: The following collection contains end-to-end guidelines for sales order use cases.
-author: Michelle Hu
+author: michelle-hu
 tags: [open-source, beginner]
 sort: asc
 color: purple
