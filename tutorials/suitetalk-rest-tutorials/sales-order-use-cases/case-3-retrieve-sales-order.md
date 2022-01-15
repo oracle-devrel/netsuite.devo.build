@@ -12,7 +12,7 @@ categories:
 - sales-order
 - opensource
 description: This use case demonstrates how to retrieve your sales order.
-author: Michelle Hu
+author: michelle-hu
 date: 2022-01-11 11:00:00
 ---
 Use a GET request with the Sales Order's ID number to retrieve the sales order data.
