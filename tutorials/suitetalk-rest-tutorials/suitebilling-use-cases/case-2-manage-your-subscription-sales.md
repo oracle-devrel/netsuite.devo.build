@@ -13,7 +13,7 @@ categories:
 - opensource
 description: This use case demonstrates how to manage your subscription sales.
 toc: true
-author: Michelle Hu
+author: michelle-hu
 date: 2022-01-11 11:00:00
 ---
 REST services provide a convenient channel to manage your subscription sales.

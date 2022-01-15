@@ -13,7 +13,7 @@ categories:
 - opensource
 description: This use case demonstrates how to update your sales order.
 toc: true
-author: Michelle Hu
+author: michelle-hu
 date: 2022-01-11 11:00:00
 ---
 Some common updates to an existing sales order include the following options:

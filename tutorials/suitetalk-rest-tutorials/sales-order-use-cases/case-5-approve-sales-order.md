@@ -13,7 +13,7 @@ categories:
 - opensource
 description: This use case demonstrates how to approve your sales order.
 toc: true
-author: Michelle Hu
+author: michelle-hu
 date: 2022-01-11 11:00:00
 ---
 After you create a sales order, the `orderStatus` field of the sales order is initially set to value "A", and later changes to value "B". These letters denote the state of the sales order in the approval workflow as follows:

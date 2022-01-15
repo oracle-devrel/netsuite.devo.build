@@ -25,7 +25,7 @@ There are two ways you can create a sales order:
 To create a sales order from an existing estimate, use the transform function in the REST API:
 
 <!-- {% raw %} -->
-```
+```json
 POST {{REST_SERVICES}}/record/v1/estimate/{{ESTIMATE_ID}}/!transform/salesOrder
 ```
 <!-- {% endraw %} -->
@@ -33,7 +33,7 @@ POST {{REST_SERVICES}}/record/v1/estimate/{{ESTIMATE_ID}}/!transform/salesOrder
 This function takes an estimate with an ID of <!-- {% raw %} --> `{{ESTIMATE_ID}}` <!-- {% endraw %} --> and transforms it into a sales order. You can also specify in the body of the request which fields you want to change during the transformation.
 
 <!-- {% raw %} -->
-```
+```json
 POST {{REST_SERVICES}}/record/v1/estimate/{{ESTIMATE_ID}}/!transform/salesOrder
 {
     "memo": "Transformed Estimate to Sales Order!"
@@ -61,7 +61,7 @@ Custom Form Types include:
 - Standard Sales Order - Progress Billing
 
 <!-- {% raw %} -->
-```
+```json
 POST {{REST_SERVICES}}/record/v1/salesOrder
 ```
 <!-- {% endraw %} -->
