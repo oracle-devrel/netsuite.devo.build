@@ -83,7 +83,7 @@ A successful request returns a response with HTTP status **204 No Content**. The
 
 **Example Billing Account**
 
-```
+```json
 {
     "billingSchedule": { "id": "1" },
     "currency": { "id": "1" },
@@ -101,7 +101,7 @@ On a successful response, make note of the subscription ID. Use the ID to make c
 
 **Example Subscription**
 
-```
+```json
 {
     "customer": { "id": "1" },
     "billingAccount": { "id": "1" },
@@ -125,7 +125,7 @@ A successful request returns a response with HTTP status **204 No Content**. The
 
 **Example Edited Subscription**
 
-```
+```json
 {
     "subscriptionLine": {
         "items": [
@@ -172,7 +172,7 @@ If the customer decides that they no longer want the add-on item, you can PATCH 
 
 **Example Add-On Items**
 
-```
+```json
 {
     "subscriptionLine": {
         "items": [

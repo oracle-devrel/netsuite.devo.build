@@ -29,7 +29,7 @@ Each of the sublists has its own endpoint for you to gather field data for each 
 
 **GET Request Results**
 
-```
+```json
 {
     "links": [
         {
