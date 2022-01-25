@@ -3,6 +3,7 @@ title: Migrating N/Query Syntax to SuiteQL in SuiteScript
 parent:
 - tutorials
 - sdn-tutorials
+- sdn
 tags:
 - open-source
 - beginner
