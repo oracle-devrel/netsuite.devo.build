@@ -10,20 +10,11 @@ tags:
 categories:
 - opensource
 description: This use case demonstrates how to migrate N/Query syntax to SuiteQL in SuiteScript.
+toc: true
 author: michelle-hu
 date: 2022-01-25 11:00:00
 ---
-## **Table of Contents**
-1. [Introduction](#introduction)
-2. [Disclaimer](#disclaimer)
-3. [SuiteQL](#suiteql)
-4. [N/query Module – Query object vs SuiteQL object](#nquery)
-5. [Converting an Existing Query to SuiteQL](#converting)
-6. [References](#references)
-
-Copyright © 2021 Oracle and/or its affiliates. All rights reserved.
-
-## **Introduction**<a name="introduction"></a>
+## **Introduction**
 
 This document demonstrates the process of converting an existing SuiteScript query to SuiteQL.
 
@@ -37,7 +28,7 @@ SuiteQL is a query language based on the SQL database query language supported b
 
 ## **N/query Module** – Query object vs SuiteQL object
 
-You can use the <code>N/query</code> module to create and run queries using the SuiteAnalytics Workbook query engine either by creating a <code>query.Query</code> object or creating a <code>query.SuiteQL</code> object.
+You can use the `N/query` module to create and run queries using the SuiteAnalytics Workbook query engine either by creating a `query.Query` object or creating a `query.SuiteQL` object.
 
 Using both query objects, you can:
 * Use multi-level joins to create queries using field data from multiple record types.
@@ -47,11 +38,11 @@ Using both query objects, you can:
 * View paged query results.
 * Use promises for asynchronous execution.
 
-Where they differ is how they are structured. The <code>query.Query</code> object and the <code>query.Component</code> object are the primary building blocks for a more modular query created with the <code>N/query</code> module. The <code>query.Query</code> object encapsulates the query definition, and the <code>query.Component</code> object encapsulates one component of the query definition. <code>query.Query</code> is a much more structured method to query than <code>query.SuiteQL</code>, which can take more effort to create your code. However, this query object can be much easier to debug and step through in code than SuiteQL.  
+Where they differ is how they are structured. The `query.Query` object and the `query.Component` object are the primary building blocks for a more modular query created with the `N/query` module. The `query.Query` object encapsulates the query definition, and the `query.Component` object encapsulates one component of the query definition. `query.Query` is a much more structured method to query than `query.SuiteQL`, which can take more effort to create your code. However, this query object can be much easier to debug and step through in code than SuiteQL.  
 
 e.g.
 
-Querying customer email addresses using the <code>query.Query</code> object
+Querying customer email addresses using the `query.Query` object
 
 ```js
 var myCustomerQuery = query.create({
@@ -70,11 +61,11 @@ myCustomerQuery.columns = [
 var resultSet = myCustomerQuery.run();
 ```
 
-Queries created using SuiteQL can be more powerful and flexible than queries created using other <code>query.Query</code> in the <code>N/query</code> module. SuiteQL queries can also provide the best query performance for many use cases. You can create your own SuiteQL query strings, which lets you design and run complex SQL queries that cannot be created otherwise. However, for longer, more complex queries, query strings can be more complicated to debug and step-through compared to the <code>query.Query</code> object.
+Queries created using SuiteQL can be more powerful and flexible than queries created using other `query.Query` in the `N/query` module. SuiteQL queries can also provide the best query performance for many use cases. You can create your own SuiteQL query strings, which lets you design and run complex SQL queries that cannot be created otherwise. However, for longer, more complex queries, query strings can be more complicated to debug and step-through compared to the `query.Query` object.
 
 e.g.
 
-Querying customer email addresses using the <code>query.SuiteQL</code> object
+Querying customer email addresses using the `query.SuiteQL` object
 
 ```js
 var results = query.runSuiteQL({
@@ -82,22 +73,22 @@ var results = query.runSuiteQL({
 });
 ```
 
-## **Converting an Existing Query to SuiteQL**<a name="converting"></a>
+## **Converting an Existing Query to SuiteQL**
 
-Instead of needing to rebuild and old query from scratch to utilize SuiteQL, the <code>N/query</code> module allows you to convert query objects to SuiteQL queries. If you have a <code>query.Query</code> object in your script (one that you created using <code>query.create(options)</code> or loaded using <code>query.load(options)</code>), the <code>Query.toSuiteQL()</code> method converts a <code>query.Query</code> object to a <code>query.SuiteQL</code> object. The resulting <code>query.SuiteQL</code> object represents the same query as the original <code>query.Query</code> object and, when run, returns the same query results. Additionally, you can extract the SQL string from the <code>query.SuiteQL</code> object and modify it if required.
+Instead of needing to rebuild and old query from scratch to utilize SuiteQL, the `N/query` module allows you to convert query objects to SuiteQL queries. If you have a `query.Query` object in your script (one that you created using `query.create(options)` or loaded using `query.load(options)`), the `Query.toSuiteQL()` method converts a `query.Query` object to a `query.SuiteQL` object. The resulting `query.SuiteQL` object represents the same query as the original `query.Query` object and, when run, returns the same query results. Additionally, you can extract the SQL string from the `query.SuiteQL` object and modify it if required.
 
-A <code>query.SuiteQL</code> object includes the following properties:
+A `query.SuiteQL` object includes the following properties:
 
-* **SuiteQL.columns** — The result columns to be returned from the query. This property is an array of <code>query.Column</code> objects. The value of this property is the same as the value of the <code>Query.columns</code> property in the original <code>query.Query</code> object.
+* **SuiteQL.columns** — The result columns to be returned from the query. This property is an array of `query.Column` objects. The value of this property is the same as the value of the `Query.columns` property in the original `query.Query` object.
 * **SuiteQL.params** — The parameters for the query. In SuiteQL, query conditions are represented using the WHERE clause and a set of parameters.
-* **SuiteQL.query** — The string representation of the SuiteQL query. This string can contain SQL clauses, record or table names, field names, operators, and more. Once you have converted the <code>query.Query</code>, you can now arbitrarily modify the string and create a new query. 
-* **SuiteQL.type** — The type of the query. This property uses values from the <code>query.Type</code> enum. The value of this property is the same as the value of the <code>Query.type</code> property in the original <code>query.Query</code> object.
+* **SuiteQL.query** — The string representation of the SuiteQL query. This string can contain SQL clauses, record or table names, field names, operators, and more. Once you have converted the `query.Query`, you can now arbitrarily modify the string and create a new query. 
+* **SuiteQL.type** — The type of the query. This property uses values from the `query.Type` enum. The value of this property is the same as the value of the `Query.type` property in the original `query.Query` object.
 
 To run the SuiteQL query, use one of the following methods:
 
-Use <code>SuiteQL.run()</code> to run the query as a non-paged query. This method returns the results as a <code>query.ResultSet</code> object.
+Use `SuiteQL.run()` to run the query as a non-paged query. This method returns the results as a `query.ResultSet` object.
 
-Use <code>SuiteQL.runPaged(options)</code> to run the query as a paged query. This method returns the results as a <code>query.PagedData</code> object. The default page size is 50 results per page. The minimum page size is 5 results per page, and the maximum page size is 1000 results per page.
+Use `SuiteQL.runPaged(options)` to run the query as a paged query. This method returns the results as a `query.PagedData` object. The default page size is 50 results per page. The minimum page size is 5 results per page, and the maximum page size is 1000 results per page.
 
 e.g.
 
@@ -148,7 +139,7 @@ define(['N/query'], function(query) {
 });
 ```
 
-**NOTE**: The <code>suiteQL</code> string in this example can also contain field formatting metadata, such as <code>/\*{entityid#RAW}\*/</code>. When you use <code>Query.toSuiteQL()</code> to convert a constructed query to its SuiteQL query equivalent, metadata may be added to the query string to indicate the formatting (or context) of fields in the query. For example, <code>/\*{entityid#RAW}\*/</code> metadata indicates that the <code>entityid</code> field is formatted using the <code>query.FieldContext.RAW</code> field context from the <code>query.FieldContext</code> enum. This metadata is added as comments (using <code>/\*</code> and <code>\*/</code>) and does not affect query execution or the query results.
+**NOTE**: The `suiteQL` string in this example can also contain field formatting metadata, such as `/\*{entityid#RAW}\*/`. When you use `Query.toSuiteQL()` to convert a constructed query to its SuiteQL query equivalent, metadata may be added to the query string to indicate the formatting (or context) of fields in the query. For example, `/\*{entityid#RAW}\*/` metadata indicates that the `entityid` field is formatted using the `query.FieldContext.RAW` field context from the `query.FieldContext` enum. This metadata is added as comments (using `/\*` and `\*/`) and does not affect query execution or the query results.
 
 ## **References**
 
