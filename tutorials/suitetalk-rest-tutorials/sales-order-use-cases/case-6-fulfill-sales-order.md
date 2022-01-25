@@ -39,7 +39,6 @@ The following code sample contains two orderLine groupings:
             },
             {
                 "orderLine": 4,
-
                 "location": 6,
                 "itemreceive": false
             }
