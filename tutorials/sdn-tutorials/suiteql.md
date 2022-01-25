@@ -13,8 +13,6 @@ description: This use case demonstrates how to migrate N/Query syntax to SuiteQL
 author: michelle-hu
 date: 2022-01-25 11:00:00
 ---
-======================================================
-
 ## **Table of Contents**
 1. [Introduction](#introduction)
 2. [Disclaimer](#disclaimer)
@@ -55,20 +53,20 @@ e.g.
 
 Querying customer email addresses using the <code>query.Query</code> object
 
-    var myCustomerQuery = query.create({
-        type: query.Type.CUSTOMER
-    });
+var myCustomerQuery = query.create({
+    type: query.Type.CUSTOMER
+});
 
-    myCustomerQuery.columns = [
-        myCustomerQuery.createColumn({
-            fieldId: 'entityid'
-        }),
-        myCustomerQuery.createColumn({
-            fieldId: 'email'
-        })
-    ];
+myCustomerQuery.columns = [
+    myCustomerQuery.createColumn({
+        fieldId: 'entityid'
+    }),
+    myCustomerQuery.createColumn({
+        fieldId: 'email'
+    })
+];
 
-    var resultSet = myCustomerQuery.run();
+var resultSet = myCustomerQuery.run();
 
 Queries created using SuiteQL can be more powerful and flexible than queries created using other <code>query.Query</code> in the <code>N/query</code> module. SuiteQL queries can also provide the best query performance for many use cases. You can create your own SuiteQL query strings, which lets you design and run complex SQL queries that cannot be created otherwise. However, for longer, more complex queries, query strings can be more complicated to debug and step-through compared to the <code>query.Query</code> object.
 
@@ -76,9 +74,9 @@ e.g.
 
 Querying customer email addresses using the <code>query.SuiteQL</code> object
 
-    var results = query.runSuiteQL({
-        query: 'SELECT customer.entityid, customer.email FROM customer'
-    });
+var results = query.runSuiteQL({
+    query: 'SELECT customer.entityid, customer.email FROM customer'
+});
 
 ## **Converting an Existing Query to SuiteQL**<a name="converting"></a>
 
@@ -99,55 +97,53 @@ Use <code>SuiteQL.runPaged(options)</code> to run the query as a paged query. Th
 
 e.g.
 
-    /**
-    * @NApiVersion 2.x
-    * @NScriptType restlet
-    */
-    define(['N/query'], function(query) {
-        return {
-            get: function(context) {
-                
-        var myCustomerQuery = query.create({
-                type: query.Type.CUSTOMER
-        });
-
-        myCustomerQuery.columns = [
-                myCustomerQuery.createColumn({
-                    fieldId: 'entityid'
-                }),
+/**
+* @NApiVersion 2.x
+* @NScriptType restlet
+*/
+define(['N/query'], function(query) {
+    return {
+        get: function(context) {
             
-            myCustomerQuery.createColumn({
-                    fieldId: 'email'
-                })
-        ];
-
-                // Convert the query to its SuiteQL representation
-                var customerEmailsQL = myCustomerQuery.toSuiteQL();
-
-                // Examine the SuiteQL query string
-                var suiteQL = customerEmailsQL.query;
-
-                // Run the SuiteQL query, additionally, you can modify the string before executing
-                var resultSuiteQL = query.runSuiteQL(suiteQL);
-
-                // Compose the RESTlet response
-                var response = {
-                    query: openSalesOrders,
-                    resultQuery: resultQuery,
-                    suiteQL: suiteQL,
-                    resultSuiteQL: resultSuiteQL
-                };
-
-                // Return the response
-                return JSON.stringify(response);
-            }
-        }
+    var myCustomerQuery = query.create({
+            type: query.Type.CUSTOMER
     });
+
+    myCustomerQuery.columns = [
+            myCustomerQuery.createColumn({
+                fieldId: 'entityid'
+            }),
+        
+        myCustomerQuery.createColumn({
+                fieldId: 'email'
+            })
+    ];
+
+            // Convert the query to its SuiteQL representation
+            var customerEmailsQL = myCustomerQuery.toSuiteQL();
+
+            // Examine the SuiteQL query string
+            var suiteQL = customerEmailsQL.query;
+
+            // Run the SuiteQL query, additionally, you can modify the string before executing
+            var resultSuiteQL = query.runSuiteQL(suiteQL);
+
+            // Compose the RESTlet response
+            var response = {
+                query: openSalesOrders,
+                resultQuery: resultQuery,
+                suiteQL: suiteQL,
+                resultSuiteQL: resultSuiteQL
+            };
+
+            // Return the response
+            return JSON.stringify(response);
+        }
+    }
+});
 
 **NOTE**: The <code>suiteQL</code> string in this example can also contain field formatting metadata, such as <code>/\*{entityid#RAW}\*/</code>. When you use <code>Query.toSuiteQL()</code> to convert a constructed query to its SuiteQL query equivalent, metadata may be added to the query string to indicate the formatting (or context) of fields in the query. For example, <code>/\*{entityid#RAW}\*/</code> metadata indicates that the <code>entityid</code> field is formatted using the <code>query.FieldContext.RAW</code> field context from the <code>query.FieldContext</code> enum. This metadata is added as comments (using <code>/\*</code> and <code>\*/</code>) and does not affect query execution or the query results.
 
 ## **References**
 
-**SDN Technical Onboarding Site**
-
-https://sites.oracle.com/site/SDN_Site/
+**[SDN Technical Onboarding Site](https://sites.oracle.com/site/SDN_Site/)**
