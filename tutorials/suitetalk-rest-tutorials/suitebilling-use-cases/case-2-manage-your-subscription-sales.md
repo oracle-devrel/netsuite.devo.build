@@ -14,7 +14,7 @@ categories:
 description: This use case demonstrates how to manage your subscription sales.
 toc: true
 author: michelle-hu
-date: 2022-01-11 11:00:00
+date: 2022-01-11 09:30:00
 ---
 REST services provide a convenient channel to manage your subscription sales.
 

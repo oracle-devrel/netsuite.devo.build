@@ -14,7 +14,7 @@ categories:
 description: This use case demonstrates how to apply a promotion to your sales order.
 toc: true
 author: michelle-hu
-date: 2022-01-11 11:00:00
+date: 2022-01-11 09:30:00
 ---
 To apply a promotion to a sales order, provide the ID value to the `promocode` field.
 

@@ -13,7 +13,7 @@ categories:
 - opensource
 description: This use case demonstrates how to fulfill your sales order.
 author: michelle-hu
-date: 2022-01-11 11:00:00
+date: 2022-01-11 11:30:00
 ---
 To start the sales order fulfillment process, create a fulfillment from your sales order. You can create a fulfillment by sending a POST request with the ID of the sales order you want to fulfill.
 

@@ -14,7 +14,7 @@ categories:
 description: This use case demonstrates how to create invoices or cash sales from your sales order.
 toc: true
 author: michelle-hu
-date: 2022-01-11 11:00:00
+date: 2022-01-11 12:00:00
 ---
 This use case shows you how to create an invoice or cash sale for all fulfilled lines on the sales order.
 

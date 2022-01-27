@@ -14,7 +14,7 @@ categories:
 description: This use case demonstrates how to update your sales order.
 toc: true
 author: michelle-hu
-date: 2022-01-11 11:00:00
+date: 2022-01-11 10:30:00
 ---
 Some common updates to an existing sales order include the following options:
 
