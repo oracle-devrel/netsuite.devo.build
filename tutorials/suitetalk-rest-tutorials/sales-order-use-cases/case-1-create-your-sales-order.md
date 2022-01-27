@@ -14,7 +14,7 @@ categories:
 description: This use case demonstrates how to create your sales order.
 toc: true
 author: michelle-hu
-date: 2022-01-11 11:00:00
+date: 2022-01-11 09:00:00
 ---
 There are two ways you can create a sales order:
 - [Create a Sales Order from an Estimate](#create-a-sales-order-from-an-estimate)

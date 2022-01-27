@@ -13,7 +13,7 @@ categories:
 - opensource
 description: This use case demonstrates how to delete your sales order.
 author: michelle-hu
-date: 2022-01-11 11:00:00
+date: 2022-01-11 13:00:00
 ---
 To delete a sales order, send the DELETE call to delete the specific record with the specified ID.
 

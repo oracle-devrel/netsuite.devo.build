@@ -12,7 +12,7 @@ categories:
 description: This use case demonstrates how to migrate N/Query syntax to SuiteQL in SuiteScript.
 toc: true
 author: michelle-hu
-date: 2022-01-25 11:00:00
+date: 2022-01-25 09:00:00
 ---
 ## **Introduction**
 

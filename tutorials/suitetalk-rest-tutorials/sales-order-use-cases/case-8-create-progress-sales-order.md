@@ -14,7 +14,7 @@ categories:
 description: This use case demonstrates how to create a progress sales order.
 toc: true
 author: michelle-hu
-date: 2022-01-11 11:00:00
+date: 2022-01-11 12:30:00
 ---
 Creating a progress sales order is similar to creating a new sales order. For a progress sales order, change the custom form to Standard Sales Order - Progress Billing. You do this through REST by setting the custom form value when sending your REST request.
 
