@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
+  <link href="https://netsuite.devo.build/excerpts.xml" rel="self" type="application/atom+xml" />
+  <link href="https://netsuite.devo.build/" rel="alternate" type="text/html" />
+  <updated>2022-01-27T17:36:35+00:00</updated>
+  <id>https://netsuite.devo.build/excerpts.xml</id>
+    <title type="html">Oracle NetSuite Tutorials</title>
+    <subtitle>Cool stuff from Oracle NetSuite's Developer Relations team</subtitle>
+    <author>
+        <name>Oracle NetSuite Developer Community</name>
+    </author>
+    <entry>
+      <title type="html">Migrating N/Query Syntax to SuiteQL in SuiteScript</title>
+      <link href="https://netsuite.devo.build/tutorials/sdn-tutorials/suiteql" rel="alternate" type="text/html" title="Migrating N/Query Syntax to SuiteQL in SuiteScript" />
+      <published>2022-01-25T09:00:00+00:00</published>
+      <updated>2022-01-25T09:00:00+00:00</updated>
+      <id>https://netsuite.devo.build/tutorials/sdn-tutorials/suiteql</id>
+      <content type="html" xml:base="https://netsuite.devo.build/tutorials/sdn-tutorials/suiteql">&lt;p&gt;This use case demonstrates how to migrate N/Query syntax to SuiteQL in SuiteScript.&lt;/p&gt;</content>
+      <author>
+          <name>Michelle Hu</name>
+      </author>
+      <category term="opensource" />
+      <category term="open-source" />
+      <category term="beginner" />
+      <summary type="html">This use case demonstrates how to migrate N/Query syntax to SuiteQL in SuiteScript.</summary>
+    </entry>
+    <entry>
+      <title type="html">SDN Tutorials</title>
+      <link href="https://netsuite.devo.build/tutorials/sdn-tutorials/" rel="alternate" type="text/html" title="SDN Tutorials" />
+      <published>2022-01-24T10:00:00+00:00</published>
+      <updated>2022-01-24T10:00:00+00:00</updated>
+      <id>https://netsuite.devo.build/tutorials/sdn-tutorials/</id>
+      <content type="html" xml:base="https://netsuite.devo.build/tutorials/sdn-tutorials/">&lt;p&gt;The following collection contains SuiteCloud Developer Network (SDN) tutorials.&lt;/p&gt;</content>
+      <author>
+          <name>Michelle Hu</name>
+      </author>
+      <category term="open-source" />
+      <category term="beginner" />
+      <summary type="html">The following collection contains SuiteCloud Developer Network (SDN) tutorials.</summary>
+    </entry>
+    <entry>
+      <title type="html">Delete a Sales Order Use Case</title>
+      <link href="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-9-delete-sales-order" rel="alternate" type="text/html" title="Delete a Sales Order Use Case" />
+      <published>2022-01-11T13:00:00+00:00</published>
+      <updated>2022-01-11T13:00:00+00:00</updated>
+      <id>https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-9-delete-sales-order</id>
+      <content type="html" xml:base="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-9-delete-sales-order">&lt;p&gt;This use case demonstrates how to delete your sales order.&lt;/p&gt;</content>
+      <author>
+          <name>Michelle Hu</name>
+      </author>
+      <category term="sales-order" />
+      <category term="opensource" />
+      <category term="open-source" />
+      <category term="sales-order" />
+      <category term="beginner" />
+      <summary type="html">This use case demonstrates how to delete your sales order.</summary>
+    </entry>
+    <entry>
+      <title type="html">Create a Progress Sales Order Use Case</title>
+      <link href="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-8-create-progress-sales-order" rel="alternate" type="text/html" title="Create a Progress Sales Order Use Case" />
+      <published>2022-01-11T12:30:00+00:00</published>
+      <updated>2022-01-11T12:30:00+00:00</updated>
+      <id>https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-8-create-progress-sales-order</id>
+      <content type="html" xml:base="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-8-create-progress-sales-order">&lt;p&gt;This use case demonstrates how to create a progress sales order.&lt;/p&gt;</content>
+      <author>
+          <name>Michelle Hu</name>
+      </author>
+      <category term="sales-order" />
+      <category term="opensource" />
+      <category term="open-source" />
+      <category term="sales-order" />
+      <category term="beginner" />
+      <summary type="html">This use case demonstrates how to create a progress sales order.</summary>
+    </entry>
+    <entry>
+      <title type="html">Create Invoices or Cash Sales From Your Sales Order Use Case</title>
+      <link href="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-7-create-invoice-or-cash-sales-from-sales-order" rel="alternate" type="text/html" title="Create Invoices or Cash Sales From Your Sales Order Use Case" />
+      <published>2022-01-11T12:00:00+00:00</published>
+      <updated>2022-01-11T12:00:00+00:00</updated>
+      <id>https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-7-create-invoice-or-cash-sales-from-sales-order</id>
+      <content type="html" xml:base="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-7-create-invoice-or-cash-sales-from-sales-order">&lt;p&gt;This use case demonstrates how to create invoices or cash sales from your sales order.&lt;/p&gt;</content>
+      <author>
+          <name>Michelle Hu</name>
+      </author>
+      <category term="sales-order" />
+      <category term="opensource" />
+      <category term="open-source" />
+      <category term="sales-order" />
+      <category term="beginner" />
+      <summary type="html">This use case demonstrates how to create invoices or cash sales from your sales order.</summary>
+    </entry>
+    <entry>
+      <title type="html">Fulfill Your Sales Order Use Case</title>
+      <link href="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-6-fulfill-sales-order" rel="alternate" type="text/html" title="Fulfill Your Sales Order Use Case" />
+      <published>2022-01-11T11:30:00+00:00</published>
+      <updated>2022-01-11T11:30:00+00:00</updated>
+      <id>https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-6-fulfill-sales-order</id>
+      <content type="html" xml:base="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-6-fulfill-sales-order">&lt;p&gt;This use case demonstrates how to fulfill your sales order.&lt;/p&gt;</content>
+      <author>
+          <name>Michelle Hu</name>
+      </author>
+      <category term="sales-order" />
+      <category term="opensource" />
+      <category term="open-source" />
+      <category term="sales-order" />
+      <category term="beginner" />
+      <summary type="html">This use case demonstrates how to fulfill your sales order.</summary>
+    </entry>
+    <entry>
+      <title type="html">Approve Your Sales Order Use Case</title>
+      <link href="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-5-approve-sales-order" rel="alternate" type="text/html" title="Approve Your Sales Order Use Case" />
+      <published>2022-01-11T11:00:00+00:00</published>
+      <updated>2022-01-11T11:00:00+00:00</updated>
+      <id>https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-5-approve-sales-order</id>
+      <content type="html" xml:base="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-5-approve-sales-order">&lt;p&gt;This use case demonstrates how to approve your sales order.&lt;/p&gt;</content>
+      <author>
+          <name>Michelle Hu</name>
+      </author>
+      <category term="sales-order" />
+      <category term="opensource" />
+      <category term="open-source" />
+      <category term="sales-order" />
+      <category term="beginner" />
+      <summary type="html">This use case demonstrates how to approve your sales order.</summary>
+    </entry>
+    <entry>
+      <title type="html">Update Your Sales Order Use Case</title>
+      <link href="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-4-update-sales-order" rel="alternate" type="text/html" title="Update Your Sales Order Use Case" />
+      <published>2022-01-11T10:30:00+00:00</published>
+      <updated>2022-01-11T10:30:00+00:00</updated>
+      <id>https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-4-update-sales-order</id>
+      <content type="html" xml:base="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-4-update-sales-order">&lt;p&gt;This use case demonstrates how to update your sales order.&lt;/p&gt;</content>
+      <author>
+          <name>Michelle Hu</name>
+      </author>
+      <category term="sales-order" />
+      <category term="opensource" />
+      <category term="open-source" />
+      <category term="sales-order" />
+      <category term="beginner" />
+      <summary type="html">This use case demonstrates how to update your sales order.</summary>
+    </entry>
+    <entry>
+      <title type="html">Retrieve Your Sales Order Use Case</title>
+      <link href="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-3-retrieve-sales-order" rel="alternate" type="text/html" title="Retrieve Your Sales Order Use Case" />
+      <published>2022-01-11T10:00:00+00:00</published>
+      <updated>2022-01-11T10:00:00+00:00</updated>
+      <id>https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-3-retrieve-sales-order</id>
+      <content type="html" xml:base="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-3-retrieve-sales-order">&lt;p&gt;This use case demonstrates how to retrieve your sales order.&lt;/p&gt;</content>
+      <author>
+          <name>Michelle Hu</name>
+      </author>
+      <category term="sales-order" />
+      <category term="opensource" />
+      <category term="open-source" />
+      <category term="sales-order" />
+      <category term="beginner" />
+      <summary type="html">This use case demonstrates how to retrieve your sales order.</summary>
+    </entry>
+    <entry>
+      <title type="html">Apply a Promotion to Your Sales Order Use Case</title>
+      <link href="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-2-apply-promotion-to-sales-order" rel="alternate" type="text/html" title="Apply a Promotion to Your Sales Order Use Case" />
+      <published>2022-01-11T09:30:00+00:00</published>
+      <updated>2022-01-11T09:30:00+00:00</updated>
+      <id>https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-2-apply-promotion-to-sales-order</id>
+      <content type="html" xml:base="https://netsuite.devo.build/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-2-apply-promotion-to-sales-order">&lt;p&gt;This use case demonstrates how to apply a promotion to your sales order.&lt;/p&gt;</content>
+      <author>
+          <name>Michelle Hu</name>
+      </author>
+      <category term="sales-order" />
+      <category term="opensource" />
+      <category term="open-source" />
+      <category term="sales-order" />
+      <category term="beginner" />
+      <summary type="html">This use case demonstrates how to apply a promotion to your sales order.</summary>
+    </entry>
+</feed>

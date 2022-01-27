@@ -1,0 +1,583 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Migrating N/Query Syntax to SuiteQL in SuiteScript - Oracle NetSuite Tutorials</title>
+<meta name="description" content="This use case demonstrates how to migrate N/Query syntax to SuiteQL in SuiteScript.">
+
+
+  <meta name="author" content="Michelle Hu">
+  
+  <meta property="article:author" content="Michelle Hu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Oracle NetSuite Tutorials">
+<meta property="og:title" content="Migrating N/Query Syntax to SuiteQL in SuiteScript">
+<meta property="og:url" content="https://netsuite.devo.build/tutorials/sdn-tutorials/suiteql">
+
+
+  <meta property="og:description" content="This use case demonstrates how to migrate N/Query syntax to SuiteQL in SuiteScript.">
+
+
+
+  <meta property="og:image" content="https://netsuite.devo.build/tutorials/sdn-tutorials/">
+
+
+
+
+  <meta name="twitter:site" content="@groundbreakers">
+  <meta name="twitter:title" content="Migrating N/Query Syntax to SuiteQL in SuiteScript">
+  <meta name="twitter:description" content="This use case demonstrates how to migrate N/Query syntax to SuiteQL in SuiteScript.">
+  <meta name="twitter:url" content="https://netsuite.devo.build/tutorials/sdn-tutorials/suiteql">
+
+  
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://netsuite.devo.build/assets/site-logo.png">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2022-01-25T09:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://netsuite.devo.build/tutorials/sdn-tutorials/suiteql">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://netsuite.devo.build/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/main.xml" type="application/atom+xml" rel="alternate" title="Oracle NetSuite Tutorials Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<link rel="icon" href="https://www.oracle.com/asset/web/favicons/favicon-32.png" sizes="32x32">
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead oracle-header oracle-headerv1 oracle-headeradj oracle-headerdev">
+  <div class="masthead__inner-wrap oracle-headerw1">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <div class="oracle-headers1 site-logo">
+          <a class="oracle-logo" href="https://developer.oracle.com/"><span>Oracle</span></a>
+        </div>
+        <div class="u18-title site-title">
+          <a href="/">
+            Oracle NetSuite Tutorials
+            
+          </a>
+        </div>
+
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/use-cases/">Use Cases</a>
+            </li><li class="masthead__menu-item">
+              <a href="/topics/">Explore Topics</a>
+            </li><li class="masthead__menu-item">
+            <a href="https://signup.cloud.oracle.com/?language=en&sourceType=:ow:de:te::::RC_WWMK211116P00260:DotBuildGetStarted&intcmp=:ow:de:te::::RC_WWMK211116P00260:DotBuildGetStarted">Get Started For Free</a>
+          </li>
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+
+    <div class="sidebar sticky">
+    <p><strong>Tags:</strong> <span class="tags">
+
+            
+            <a class="animated-link tag" href="/topics/open-source">open-source</a>
+            <a class="animated-link tag" href="/topics/beginner">beginner</a>
+            </span>
+    </p>
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Michelle Hu</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Oracle NetSuite SuiteCloud Platform Product Manager</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  
+  
+  <p><strong>From this author:</strong>
+    <ul>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-1-create-your-sales-order">Create Your Sales Order Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/suitebilling-use-cases/case-1-manage-your-subscription-catalog">Manage Your Subscription Catalog Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-2-apply-promotion-to-sales-order">Apply a Promotion to Your Sales Order Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/suitebilling-use-cases/case-2-manage-your-subscription-sales">Manage Your Subscription Sales Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-3-retrieve-sales-order">Retrieve Your Sales Order Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-4-update-sales-order">Update Your Sales Order Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-5-approve-sales-order">Approve Your Sales Order Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-6-fulfill-sales-order">Fulfill Your Sales Order Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-7-create-invoice-or-cash-sales-from-sales-order">Create Invoices or Cash Sales From Your Sales Order Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-8-create-progress-sales-order">Create a Progress Sales Order Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/case-9-delete-sales-order">Delete a Sales Order Use Case</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/suitebilling-use-cases/">SuiteTalk REST Web Services Tutorials - SuiteBilling Use Cases</a></li>
+      
+        <li><a href="/tutorials/sdn-tutorials/">SDN Tutorials</a></li>
+      
+        <li><a href="/tutorials/suitetalk-rest-tutorials/sales-order-use-cases/">SuiteTalk REST Web Services Tutorials - Sales Order Use Cases</a></li>
+      
+    </ul>
+  
+  
+
+  </div>
+
+
+  <article class="page has-sidebar has-toc" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Migrating N/Query Syntax to SuiteQL in SuiteScript">
+    
+    <meta itemprop="datePublished" content="2022-01-25T09:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Migrating N/Query Syntax to SuiteQL in SuiteScript
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#introduction">Introduction</a></li><li><a href="#disclaimer">Disclaimer</a></li><li><a href="#suiteql">SuiteQL</a></li><li><a href="#nquery-module--query-object-vs-suiteql-object">N/query Module – Query object vs SuiteQL object</a></li><li><a href="#converting-an-existing-query-to-suiteql">Converting an Existing Query to SuiteQL</a></li><li><a href="#references">References</a></li></ul>
+
+            </nav>
+          </aside>
+        
+
+        <h2 id="introduction"><strong>Introduction</strong></h2>
+
+<p>This document demonstrates the process of converting an existing SuiteScript query to SuiteQL.</p>
+
+<h2 id="disclaimer"><strong>Disclaimer</strong></h2>
+
+<p>The step-by-step procedures indicated and screenshots in this document are taken from NetSuite release 2021.1.  The recommendations in this document are from the best practices gathered by the SDN Solutions Engineering team.  The processes, screenshots, and link descriptions may vary slightly from the latest versions of NetSuite and SuiteApp Control Center.</p>
+
+<h2 id="suiteql"><strong>SuiteQL</strong></h2>
+
+<p>SuiteQL is a query language based on the SQL database query language supported by SuiteScirpt via the N/query module. It provides advanced query capabilities you can use to access your NetSuite records and data, and it supports querying the analytics data source. SuiteQL supports the syntax for both SQL-92 and Oracle SQL. However, you cannot use both syntaxes in the same query.</p>
+
+<h2 id="nquery-module--query-object-vs-suiteql-object"><strong>N/query Module</strong> – Query object vs SuiteQL object</h2>
+
+<p>You can use the <code class="language-plaintext highlighter-rouge">N/query</code> module to create and run queries using the SuiteAnalytics Workbook query engine either by creating a <code class="language-plaintext highlighter-rouge">query.Query</code> object or creating a <code class="language-plaintext highlighter-rouge">query.SuiteQL</code> object.</p>
+
+<p>Using both query objects, you can:</p>
+<ul>
+  <li>Use multi-level joins to create queries using field data from multiple record types.</li>
+  <li>Create conditions (filters) using AND, OR, and NOT logic, as well as formulas and relative dates.</li>
+  <li>Sort query results based on the values of multiple columns.</li>
+  <li>Load and delete existing saved queries that were created using the SuiteAnalytics Workbook interface.</li>
+  <li>View paged query results.</li>
+  <li>Use promises for asynchronous execution.</li>
+</ul>
+
+<p>Where they differ is how they are structured. The <code class="language-plaintext highlighter-rouge">query.Query</code> object and the <code class="language-plaintext highlighter-rouge">query.Component</code> object are the primary building blocks for a more modular query created with the <code class="language-plaintext highlighter-rouge">N/query</code> module. The <code class="language-plaintext highlighter-rouge">query.Query</code> object encapsulates the query definition, and the <code class="language-plaintext highlighter-rouge">query.Component</code> object encapsulates one component of the query definition. <code class="language-plaintext highlighter-rouge">query.Query</code> is a much more structured method to query than <code class="language-plaintext highlighter-rouge">query.SuiteQL</code>, which can take more effort to create your code. However, this query object can be much easier to debug and step through in code than SuiteQL.</p>
+
+<p>e.g.</p>
+
+<p>Querying customer email addresses using the <code class="language-plaintext highlighter-rouge">query.Query</code> object</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myCustomerQuery</span> <span class="o">=</span> <span class="nx">query</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nx">query</span><span class="p">.</span><span class="nx">Type</span><span class="p">.</span><span class="nx">CUSTOMER</span>
+<span class="p">});</span>
+
+<span class="nx">myCustomerQuery</span><span class="p">.</span><span class="nx">columns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nx">myCustomerQuery</span><span class="p">.</span><span class="nx">createColumn</span><span class="p">({</span>
+        <span class="na">fieldId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">entityid</span><span class="dl">'</span>
+    <span class="p">}),</span>
+    <span class="nx">myCustomerQuery</span><span class="p">.</span><span class="nx">createColumn</span><span class="p">({</span>
+        <span class="na">fieldId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">email</span><span class="dl">'</span>
+    <span class="p">})</span>
+<span class="p">];</span>
+
+<span class="kd">var</span> <span class="nx">resultSet</span> <span class="o">=</span> <span class="nx">myCustomerQuery</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Queries created using SuiteQL can be more powerful and flexible than queries created using other <code class="language-plaintext highlighter-rouge">query.Query</code> in the <code class="language-plaintext highlighter-rouge">N/query</code> module. SuiteQL queries can also provide the best query performance for many use cases. You can create your own SuiteQL query strings, which lets you design and run complex SQL queries that cannot be created otherwise. However, for longer, more complex queries, query strings can be more complicated to debug and step-through compared to the <code class="language-plaintext highlighter-rouge">query.Query</code> object.</p>
+
+<p>e.g.</p>
+
+<p>Querying customer email addresses using the <code class="language-plaintext highlighter-rouge">query.SuiteQL</code> object</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">query</span><span class="p">.</span><span class="nx">runSuiteQL</span><span class="p">({</span>
+    <span class="na">query</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SELECT customer.entityid, customer.email FROM customer</span><span class="dl">'</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="converting-an-existing-query-to-suiteql"><strong>Converting an Existing Query to SuiteQL</strong></h2>
+
+<p>Instead of needing to rebuild and old query from scratch to utilize SuiteQL, the <code class="language-plaintext highlighter-rouge">N/query</code> module allows you to convert query objects to SuiteQL queries. If you have a <code class="language-plaintext highlighter-rouge">query.Query</code> object in your script (one that you created using <code class="language-plaintext highlighter-rouge">query.create(options)</code> or loaded using <code class="language-plaintext highlighter-rouge">query.load(options)</code>), the <code class="language-plaintext highlighter-rouge">Query.toSuiteQL()</code> method converts a <code class="language-plaintext highlighter-rouge">query.Query</code> object to a <code class="language-plaintext highlighter-rouge">query.SuiteQL</code> object. The resulting <code class="language-plaintext highlighter-rouge">query.SuiteQL</code> object represents the same query as the original <code class="language-plaintext highlighter-rouge">query.Query</code> object and, when run, returns the same query results. Additionally, you can extract the SQL string from the <code class="language-plaintext highlighter-rouge">query.SuiteQL</code> object and modify it if required.</p>
+
+<p>A <code class="language-plaintext highlighter-rouge">query.SuiteQL</code> object includes the following properties:</p>
+
+<ul>
+  <li><strong>SuiteQL.columns</strong> — The result columns to be returned from the query. This property is an array of <code class="language-plaintext highlighter-rouge">query.Column</code> objects. The value of this property is the same as the value of the <code class="language-plaintext highlighter-rouge">Query.columns</code> property in the original <code class="language-plaintext highlighter-rouge">query.Query</code> object.</li>
+  <li><strong>SuiteQL.params</strong> — The parameters for the query. In SuiteQL, query conditions are represented using the WHERE clause and a set of parameters.</li>
+  <li><strong>SuiteQL.query</strong> — The string representation of the SuiteQL query. This string can contain SQL clauses, record or table names, field names, operators, and more. Once you have converted the <code class="language-plaintext highlighter-rouge">query.Query</code>, you can now arbitrarily modify the string and create a new query.</li>
+  <li><strong>SuiteQL.type</strong> — The type of the query. This property uses values from the <code class="language-plaintext highlighter-rouge">query.Type</code> enum. The value of this property is the same as the value of the <code class="language-plaintext highlighter-rouge">Query.type</code> property in the original <code class="language-plaintext highlighter-rouge">query.Query</code> object.</li>
+</ul>
+
+<p>To run the SuiteQL query, use one of the following methods:</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">SuiteQL.run()</code> to run the query as a non-paged query. This method returns the results as a <code class="language-plaintext highlighter-rouge">query.ResultSet</code> object.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">SuiteQL.runPaged(options)</code> to run the query as a paged query. This method returns the results as a <code class="language-plaintext highlighter-rouge">query.PagedData</code> object. The default page size is 50 results per page. The minimum page size is 5 results per page, and the maximum page size is 1000 results per page.</p>
+
+<p>e.g.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+* @NApiVersion 2.x
+* @NScriptType restlet
+*/</span>
+<span class="nx">define</span><span class="p">([</span><span class="dl">'</span><span class="s1">N/query</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">get</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+            
+            <span class="kd">var</span> <span class="nx">myCustomerQuery</span> <span class="o">=</span> <span class="nx">query</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+                <span class="na">type</span><span class="p">:</span> <span class="nx">query</span><span class="p">.</span><span class="nx">Type</span><span class="p">.</span><span class="nx">CUSTOMER</span>
+            <span class="p">});</span>
+
+            <span class="nx">myCustomerQuery</span><span class="p">.</span><span class="nx">columns</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="nx">myCustomerQuery</span><span class="p">.</span><span class="nx">createColumn</span><span class="p">({</span>
+                    <span class="na">fieldId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">entityid</span><span class="dl">'</span>
+                <span class="p">}),</span>
+                
+                <span class="nx">myCustomerQuery</span><span class="p">.</span><span class="nx">createColumn</span><span class="p">({</span>
+                        <span class="na">fieldId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">email</span><span class="dl">'</span>
+                <span class="p">})</span>
+            <span class="p">];</span>
+
+            <span class="c1">// Convert the query to its SuiteQL representation</span>
+            <span class="kd">var</span> <span class="nx">customerEmailsQL</span> <span class="o">=</span> <span class="nx">myCustomerQuery</span><span class="p">.</span><span class="nx">toSuiteQL</span><span class="p">();</span>
+
+            <span class="c1">// Examine the SuiteQL query string</span>
+            <span class="kd">var</span> <span class="nx">suiteQL</span> <span class="o">=</span> <span class="nx">customerEmailsQL</span><span class="p">.</span><span class="nx">query</span><span class="p">;</span>
+
+            <span class="c1">// Run the SuiteQL query, additionally, you can modify the string before executing</span>
+            <span class="kd">var</span> <span class="nx">resultSuiteQL</span> <span class="o">=</span> <span class="nx">query</span><span class="p">.</span><span class="nx">runSuiteQL</span><span class="p">(</span><span class="nx">suiteQL</span><span class="p">);</span>
+
+            <span class="c1">// Compose the RESTlet response</span>
+            <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="na">query</span><span class="p">:</span> <span class="nx">openSalesOrders</span><span class="p">,</span>
+                <span class="na">resultQuery</span><span class="p">:</span> <span class="nx">resultQuery</span><span class="p">,</span>
+                <span class="na">suiteQL</span><span class="p">:</span> <span class="nx">suiteQL</span><span class="p">,</span>
+                <span class="na">resultSuiteQL</span><span class="p">:</span> <span class="nx">resultSuiteQL</span>
+            <span class="p">};</span>
+
+            <span class="c1">// Return the response</span>
+            <span class="k">return</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>NOTE</strong>: The <code class="language-plaintext highlighter-rouge">suiteQL</code> string in this example can also contain field formatting metadata, such as <code class="language-plaintext highlighter-rouge">/\*{entityid#RAW}\*/</code>. When you use <code class="language-plaintext highlighter-rouge">Query.toSuiteQL()</code> to convert a constructed query to its SuiteQL query equivalent, metadata may be added to the query string to indicate the formatting (or context) of fields in the query. For example, <code class="language-plaintext highlighter-rouge">/\*{entityid#RAW}\*/</code> metadata indicates that the <code class="language-plaintext highlighter-rouge">entityid</code> field is formatted using the <code class="language-plaintext highlighter-rouge">query.FieldContext.RAW</code> field context from the <code class="language-plaintext highlighter-rouge">query.FieldContext</code> enum. This metadata is added as comments (using <code class="language-plaintext highlighter-rouge">/\*</code> and <code class="language-plaintext highlighter-rouge">\*/</code>) and does not affect query execution or the query results.</p>
+
+<h2 id="references"><strong>References</strong></h2>
+
+<p><strong><a href="https://sites.oracle.com/site/SDN_Site/?source=:ex:tb::::::WW_FY22_DevRel_DotBuild&SC=:ex:tb::::::WW_FY22_DevRel_DotBuild&pcode=">SDN Technical Onboarding Site</a></strong></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-01-25T09:00:00+00:00">January 25, 2022</time></p>
+
+
+      </footer>
+
+      
+
+      
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/main.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Oracle</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="/assets/js/custom.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+  
+    <script src="/assets/js/plugins/readmore.min.js"></script>
+  
+
+
+<!-- Start SiteCatalyst code -->
+<script>
+  var s_pageName = "devrel:en-us:";
+  if (typeof(document.title) != "undefined") {
+    var s_pageName = s_pageName + document.title.trim()
+  };
+</script>
+<script src="https://www.oracleimg.com/us/assets/metrics/ora_otn.js"></script>
+<!-- End SiteCatalyst code -->
+
+
+  </body>
+</html>
